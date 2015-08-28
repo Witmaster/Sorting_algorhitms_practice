@@ -1,0 +1,9 @@
+D:\Git\Sorting_algorhitms_practice\Sorting_algorhitms_practice\bin\Debug\Sorting_algorhitms_practice.exe.config
+D:\Git\Sorting_algorhitms_practice\Sorting_algorhitms_practice\bin\Debug\Sorting_algorhitms_practice.exe
+D:\Git\Sorting_algorhitms_practice\Sorting_algorhitms_practice\bin\Debug\Sorting_algorhitms_practice.pdb
+D:\Git\Sorting_algorhitms_practice\Sorting_algorhitms_practice\obj\Debug\Sorting_algorhitms_practice.csprojResolveAssemblyReference.cache
+D:\Git\Sorting_algorhitms_practice\Sorting_algorhitms_practice\obj\Debug\Sorting_algorhitms_practice.Form1.resources
+D:\Git\Sorting_algorhitms_practice\Sorting_algorhitms_practice\obj\Debug\Sorting_algorhitms_practice.Properties.Resources.resources
+D:\Git\Sorting_algorhitms_practice\Sorting_algorhitms_practice\obj\Debug\Sorting_algorhitms_practice.csproj.GenerateResource.Cache
+D:\Git\Sorting_algorhitms_practice\Sorting_algorhitms_practice\obj\Debug\Sorting_algorhitms_practice.exe
+D:\Git\Sorting_algorhitms_practice\Sorting_algorhitms_practice\obj\Debug\Sorting_algorhitms_practice.pdb
