@@ -38,7 +38,7 @@ namespace Sorting_algorhitms_practice
         {
             int leftMargin = 0;
             int rightMargin = array.Length - 1;
-            bool flag= false; //flag to check if no swaps occured during iteration, if so - array is sorted, no further iterations required
+            bool flag= true; //flag to check if no swaps occured during iteration, if so - array is sorted, no further iterations required
             while (flag) 
             {
                 flag = false;
@@ -64,7 +64,7 @@ namespace Sorting_algorhitms_practice
                 //and rightmost - the maximal, thus exclude them from further iterations
                 rightMargin--;
                 leftMargin++;
-            };
+            }
         }
 
         public static void Gnomesort(int[] array)
@@ -80,35 +80,12 @@ namespace Sorting_algorhitms_practice
                 else { i++; }
                 if (i<0) { i = 0; }
             }
-            while (i < array.Length);
+            while (i < array.Length-1);
         }
 
         public static void Quick(int[] array, int lowBoundary, int highBoundary)
         {
-            int pivot = array[(lowBoundary+highBoundary)/2];
-            int pivotPoint = (lowBoundary+highBoundary)/2;
-            int lowIndex = lowBoundary;
-            int highIndex = highBoundary-1;
-            while (highIndex>lowIndex)
-            {
-                while (pivot>array[lowIndex])
-                {
-                    lowIndex++;
-                    if (lowIndex == highIndex) break;
-                }
-                while (pivot<array[highIndex])
-                {
-                    highIndex--;
-                    if (highIndex == lowIndex) break;
-                }
-                if (highIndex == lowIndex) break;
-                if (pivotPoint == lowIndex) { pivotPoint = highIndex; }
-                if (pivotPoint==highIndex) { pivotPoint = lowIndex; }
-                Swap(array, lowIndex, highIndex);
-            }
-            Swap(array, pivotPoint, highIndex);
-            if (lowBoundary < pivotPoint - 1) { Quick(array, lowBoundary, pivotPoint); }
-            if (highBoundary > pivotPoint + 1) { Quick(array, pivotPoint + 1, highBoundary); }
+            //to be implemented
         }
 
 

@@ -37,7 +37,31 @@ namespace Sorting_algorhitms_practice
             }
             //add switchcase selection of algorhitm to use
             //add elapsed time counter
-            Sort.Quick(intarray, 0, intarray.Length);
+            switch (comboBox1.Items[comboBox1.SelectedIndex].ToString())
+            {
+                case "Quick":
+                    {
+                        Sort.Quick(intarray, 0, intarray.Length);
+                        break;
+                    }
+                case "Bubble":
+                    {
+                        Sort.Bubble(intarray, intarray.Length);
+                        break;
+                    }
+                case "Cocktail":
+                    {
+                        Sort.Cocktail(intarray);
+                        break;
+                    }
+                case "Gnome":
+                    {
+                        Sort.Gnomesort(intarray);
+                        break;
+                    }
+                default:
+                    { break; }
+            }
             textBox1.Text = "";
             foreach(int item in intarray)
             {
