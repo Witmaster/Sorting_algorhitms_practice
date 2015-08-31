@@ -16,6 +16,7 @@ namespace Sorting_algorhitms_practice
         public Form1()
         {
             InitializeComponent();
+            comboBox1.SelectedIndex = 0;
             using (StreamReader reader = new StreamReader("d:/rnd.txt"))
             {
                 string str = reader.ReadLine();
@@ -37,16 +38,18 @@ namespace Sorting_algorhitms_practice
             }
             //add switchcase selection of algorhitm to use
             //add elapsed time counter
+            DateTime timer = DateTime.Now;
+            Sort.swapsDone = 0;
             switch (comboBox1.Items[comboBox1.SelectedIndex].ToString())
             {
                 case "Quick":
                     {
-                        Sort.Quick(intarray, 0, intarray.Length);
+                        Sort.Quick(intarray, 0, intarray.Length-1);
                         break;
                     }
                 case "Bubble":
                     {
-                        Sort.Bubble(intarray, intarray.Length);
+                        Sort.Bubble(intarray);
                         break;
                     }
                 case "Cocktail":
@@ -59,10 +62,83 @@ namespace Sorting_algorhitms_practice
                         Sort.Gnomesort(intarray);
                         break;
                     }
+                case "Comb":
+                    {
+                        Sort.Comb(intarray);
+                        break;
+                    }
+                case "Odd-even":
+                    {
+                        Sort.OddEven(intarray);
+                        break;
+                    }
+                case "Selection":
+                    {
+                        Sort.Selection(intarray);
+                        break;
+                    }
+                case "Heapsort":
+                    {
+                        //Sort.Heapsort(intarray);
+                        break;
+                    }
+                case "Smoothsort":
+                    {
+                        //Sort.Smoothsort(intarray);
+                        break;
+                    }
+                case "Insertion":
+                    {
+                        //Sort.Insertion(intarray);
+                        break;
+                    }
+                case "Shellsort":
+                    {
+                        //Sort.Shellsort(intarray);
+                        break;
+                    }
+                case "Tree sort":
+                    {
+                        //Sort.TreeSort(intarray);
+                        break;
+                    }
+                case "Merge sort":
+                    {
+                        //Sort.MergeSort(intarray);
+                        break;
+                    }
+                case "Radix LSD sort":
+                    {
+                        //Sort.RadixLSD(intarray);
+                        break;
+                    }
+                case "Radix MSD sort":
+                    {
+                        //Sort.RadixMSD(intarray);
+                        break;
+                    }
+                case "Bucket sort":
+                    {
+                        //Sort.BucketSort(intarray);
+                        break;
+                    }
+                case "Introsort":
+                    {
+                        //Sort.Introsort(intarray);
+                        break;
+                    }
+                case "Timsort":
+                    {
+                        //Sort.Timsort(intarray);
+                        break;
+                    }
                 default:
                     { break; }
             }
+            TimeSpan eta = DateTime.Now - timer;
             textBox1.Text = "";
+            timeelapsed.Text = "sorting " + intarray.Length.ToString() + " items: " + Sort.swapsDone.ToString()+" swaps done, "
+                + eta.Minutes.ToString() +"m"+ eta.Seconds.ToString()+"s"+ eta.Milliseconds.ToString()+"ms"; 
             foreach(int item in intarray)
             {
                 textBox1.Text += item.ToString() + Environment.NewLine;
