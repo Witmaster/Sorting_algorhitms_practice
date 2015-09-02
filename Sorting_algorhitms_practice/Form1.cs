@@ -79,7 +79,7 @@ namespace Sorting_algorhitms_practice
                     }
                 case "Heapsort":
                     {
-                        //Sort.Heapsort(intarray);
+                        Sort.HeapSort(intarray);
                         break;
                     }
                 case "Smoothsort":

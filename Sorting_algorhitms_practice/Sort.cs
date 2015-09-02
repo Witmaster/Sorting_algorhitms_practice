@@ -181,5 +181,37 @@ namespace Sorting_algorhitms_practice
             }
         }
 
+        public static void HeapSort(int[] array)
+        {
+            int end = array.Length-1;
+            while (end > 0)
+            {
+                HeapBuild(array, end);
+                Swap(array, 0, end);
+                end--;
+                Swap(array, 0, end);
+            }
+        }
+        private static void HeapBuild(int[] array, int end)
+        {
+            bool sorted = false;
+            while(!sorted)
+            {
+                sorted = true;
+                for (int i = 0; ((2*i)+1) <= end; i++)
+                {
+                    if (array[i]<array[((2 * i) + 1)])
+                    {
+                        sorted = false;
+                        Swap(array, i, ((2 * i) + 1));
+                    }
+                    if (array[i]<array[((2 * i) + 2)]&&((2* i)+2<= end))
+                    {
+                        sorted = false;
+                        Swap(array, i, ((2 * i) + 2));
+                    }
+                }
+            }
+        }
     }
 }
