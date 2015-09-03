@@ -89,12 +89,12 @@ namespace Sorting_algorhitms_practice
                     }
                 case "Insertion":
                     {
-                        //Sort.Insertion(intarray);
+                        Sort.Insertion(intarray);
                         break;
                     }
                 case "Shellsort":
                     {
-                        //Sort.Shellsort(intarray);
+                        Sort.Shellsort(intarray);
                         break;
                     }
                 case "Tree sort":

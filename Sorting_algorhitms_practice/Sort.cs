@@ -213,5 +213,49 @@ namespace Sorting_algorhitms_practice
                 }
             }
         }
+
+        public static void Insertion(int[] array)
+        {
+            for (int i = 0; i < array.Length-1; i++)
+            {
+                if (array[i]>array[i+1])
+                {
+                    int temp = array[i + 1];
+                    for (int j = i; j >=0 ; j--)
+                    {
+                        
+                        if (array[j]>temp)
+                        {
+                            array[j + 1] = array[j]; if (j == 0) { array[j] = temp; break; }
+                        }
+                        else
+                        {
+                            array[j + 1] = temp;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        public static void Shellsort(int[] array)
+        {
+            const double diminishFactor = 1.247;
+            int step = (int)(array.Length / diminishFactor);
+            for (int i = 0; i < array.Length - step - 1; i++)
+            {
+                if (array[i]<array[i+step])
+                {
+
+                }
+            }
+        }
+
+        private int L(uint x)
+        {
+            if (x<2) { return 1; }
+            else { int result = L(x - 1) + L(x - 2) + 1; return result; }
+        }
+
     }
 }
