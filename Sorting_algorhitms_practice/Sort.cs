@@ -242,11 +242,36 @@ namespace Sorting_algorhitms_practice
         {
             const double diminishFactor = 1.247;
             int step = (int)(array.Length / diminishFactor);
-            for (int i = 0; i < array.Length - step - 1; i++)
+            bool sorted = false;
+            while (!sorted)
             {
-                if (array[i]<array[i+step])
+                if (step==1) { sorted = true; }
+                for (int i = 0; i < array.Length - step - 1; i++)
                 {
-
+                    if (array[i] > array[i + step])
+                    {
+                        sorted = false;
+                        int temp = array[i + step];
+                        for (int j = i+step-1; j >=i; j--)
+                        {
+                            if (temp < array[j])
+                            {
+                                array[j + 1] = array[j]; if (j == i) { array[j] = temp; break; }
+                            }
+                            else
+                            {
+                                array[j + 1] = temp; break;
+                            }
+                        }
+                    }
+                }
+                if (step > 1)
+                {
+                    step = (int)((double)step / diminishFactor);
+                }
+                else
+                {
+                    Selection(array);
                 }
             }
         }
