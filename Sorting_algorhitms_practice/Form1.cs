@@ -122,16 +122,6 @@ namespace Sorting_algorhitms_practice
                         //Sort.BucketSort(intarray);
                         break;
                     }
-                case "Introsort":
-                    {
-                        //Sort.Introsort(intarray);
-                        break;
-                    }
-                case "Timsort":
-                    {
-                        //Sort.Timsort(intarray);
-                        break;
-                    }
                 default:
                     { break; }
             }
