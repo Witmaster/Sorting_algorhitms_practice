@@ -91,9 +91,7 @@
             "Merge sort",
             "Radix LSD sort",
             "Radix MSD sort",
-            "Bucket sort",
-            "Introsort",
-            "Timsort"});
+            "Bucket sort"});
             this.comboBox1.Location = new System.Drawing.Point(13, 203);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(157, 21);
