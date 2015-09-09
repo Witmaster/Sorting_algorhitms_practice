@@ -282,5 +282,9 @@ namespace Sorting_algorhitms_practice
             else { int result = L(x - 1) + L(x - 2) + 1; return result; }
         }
 
+        public static void Smoothsort(int[] array)
+        {
+
+        }
     }
 }
