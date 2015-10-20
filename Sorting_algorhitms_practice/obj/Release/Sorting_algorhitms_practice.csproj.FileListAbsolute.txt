@@ -1,0 +1,8 @@
+D:\Git\Sorting_algorhitms_practice\Sorting_algorhitms_practice\bin\Release\Sorting_algorhitms_practice.exe.config
+D:\Git\Sorting_algorhitms_practice\Sorting_algorhitms_practice\bin\Release\Sorting_algorhitms_practice.exe
+D:\Git\Sorting_algorhitms_practice\Sorting_algorhitms_practice\bin\Release\Sorting_algorhitms_practice.pdb
+D:\Git\Sorting_algorhitms_practice\Sorting_algorhitms_practice\obj\Release\Sorting_algorhitms_practice.Form1.resources
+D:\Git\Sorting_algorhitms_practice\Sorting_algorhitms_practice\obj\Release\Sorting_algorhitms_practice.Properties.Resources.resources
+D:\Git\Sorting_algorhitms_practice\Sorting_algorhitms_practice\obj\Release\Sorting_algorhitms_practice.csproj.GenerateResource.Cache
+D:\Git\Sorting_algorhitms_practice\Sorting_algorhitms_practice\obj\Release\Sorting_algorhitms_practice.exe
+D:\Git\Sorting_algorhitms_practice\Sorting_algorhitms_practice\obj\Release\Sorting_algorhitms_practice.pdb

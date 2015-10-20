@@ -276,15 +276,129 @@ namespace Sorting_algorhitms_practice
             }
         }
 
-        private int L(uint x)
+        private static int L(int x) //calculate Leonardo number L(x)
         {
+            x = Math.Abs(x);
             if (x<2) { return 1; }
             else { int result = L(x - 1) + L(x - 2) + 1; return result; }
+        }
+        private static void SmoothHeapBuild(int[] array, int root, int size)
+        {
+            if (size < 2)
+                return;
+            int leoOne = root - L(size - 2) - 1;
+            int leoTwo = root - 1;
+            SmoothHeapBuild(array, leoOne, size - 1);
+            SmoothHeapBuild(array, leoTwo, size - 2);
+            if (array[root] < array[leoOne])
+            {
+                Swap(array, root, leoOne);
+                SmoothHeapBuild(array, leoOne, size - 1);
+            }
+            if (array[root] < array[leoTwo])
+            {
+                Swap(array, root, leoTwo);
+                SmoothHeapBuild(array, leoTwo, size - 2);
+            }
+        }
+         private static void SmoothHeapDestroy(int[] array, List<int> forest)
+        {
+            for (int currentRoot = array.Length - 1; currentRoot>0; currentRoot--)
+            {
+                if (forest.Last()>1)//break current tree into subtrees
+                {
+                    int last = forest.Last();
+                    forest.RemoveAt(forest.Count - 1);
+                    forest.Add(--last);
+                    forest.Add(--last);
+                }
+                else
+                {
+                    forest.RemoveAt(forest.Count()-1);
+                }
+                int rootIndex = -1; //variable to track root of each consequent tree in the forest
+                foreach (int tree in forest) //swap the biggest root with the forest's root, then rebuild modified tree
+                {
+                    rootIndex += L(tree);
+                    if (array[rootIndex] > array[currentRoot])
+                    {
+                        Swap(array, rootIndex, currentRoot);
+                        SmoothHeapBuild(array, rootIndex, tree);
+                    }
+                }
+            }
         }
 
         public static void Smoothsort(int[] array)
         {
+            List<int> forest = new List<int>();
+            int sequence = 0;
+            for (int index = 0; index < array.Length; index++)
+            {
+                if (forest.Count < 2)
+                {
+                    forest.Add(sequence++);
+                    continue;
+                }
+                int x = Math.Max(forest[forest.Count() - 2], forest.Last());
+                if (L(forest[forest.Count - 2]) + L(forest.Last()) + 1 == L(x + 1))
+                {
+                    forest.RemoveAt(forest.Count() - 1);
+                    forest.RemoveAt(forest.Count() - 1);
+                    forest.Add(x + 1);
+                    SmoothHeapBuild(array, index, forest.Last());
+                    sequence = 0;
+                }
+                else
+                {
+                    forest.Add(sequence++);
+                }
+            }
+            SmoothHeapDestroy(array, forest);
+        }
 
+        public static void MergeSortRun(int[] array)
+        {
+            mergesort(array, 0, array.Length - 1);
+        }
+        private static void mergesort(int[] array, int firstIndex, int lastIndex)
+        {
+            if (lastIndex - firstIndex < 1) return;
+            mergesort(array, firstIndex, (firstIndex + lastIndex) / 2);
+            mergesort(array, ((firstIndex+lastIndex)/ 2 ) + 1, lastIndex);
+            merge(array, firstIndex, lastIndex);
+        }
+
+        private static void merge(int[] array, int firstIndex, int lastIndex)
+        {
+            int mid = (firstIndex + lastIndex) / 2;
+            int left = firstIndex;
+            int right = mid + 1;
+            int[] aux = new int[lastIndex - firstIndex + 1];
+            int index = 0;
+            while (left <= mid && right <= lastIndex)
+            {
+                if (array[right] < array[left])
+                {
+                    aux[index++] = array[right++];
+                }
+                else
+                {
+                    aux[index++] = array[left++];
+                }
+            }
+            while (left <= mid)
+            {
+                aux[index++] = array[left++];
+            }
+            while (right <= lastIndex)
+            {
+                aux[index++] = array[right++];
+            }
+            for (index = 0; firstIndex <= lastIndex; index++)
+            {
+                array[firstIndex++] = aux[index];
+            }
         }
     }
 }

@@ -84,7 +84,7 @@ namespace Sorting_algorhitms_practice
                     }
                 case "Smoothsort":
                     {
-                        //Sort.Smoothsort(intarray);
+                        Sort.Smoothsort(intarray);
                         break;
                     }
                 case "Insertion":
@@ -97,29 +97,9 @@ namespace Sorting_algorhitms_practice
                         Sort.Shellsort(intarray);
                         break;
                     }
-                case "Tree sort":
-                    {
-                        //Sort.TreeSort(intarray);
-                        break;
-                    }
                 case "Merge sort":
                     {
-                        //Sort.MergeSort(intarray);
-                        break;
-                    }
-                case "Radix LSD sort":
-                    {
-                        //Sort.RadixLSD(intarray);
-                        break;
-                    }
-                case "Radix MSD sort":
-                    {
-                        //Sort.RadixMSD(intarray);
-                        break;
-                    }
-                case "Bucket sort":
-                    {
-                        //Sort.BucketSort(intarray);
+                        Sort.MergeSortRun(intarray);
                         break;
                     }
                 default:

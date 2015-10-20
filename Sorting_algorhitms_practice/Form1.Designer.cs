@@ -87,11 +87,7 @@
             "Smoothsort",
             "Insertion",
             "Shellsort",
-            "Tree sort",
-            "Merge sort",
-            "Radix LSD sort",
-            "Radix MSD sort",
-            "Bucket sort"});
+            "Merge sort"});
             this.comboBox1.Location = new System.Drawing.Point(13, 203);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(157, 21);
